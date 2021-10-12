@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from "../src/context/authContext";
 import Login from './pages/index';
-import Call from './pages/gitHub_redirect';
+import Search from './pages/userSearch';
 
 export default function App() {
   
@@ -13,7 +13,7 @@ export default function App() {
       <Router>
         <Switch>
           <Route path="/" exact component={Login} />
-          <Route path="/myGitSpace:code?"  component={Call} />
+          <Route path="/myGitSpace:code?"  component={Search} />
         </Switch>
         
       </Router>
