@@ -1,10 +1,15 @@
 import React, { useEffect, useState, } from "react";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../context/authContext";
-import Loading from "../components/Loading/Loading";
-import Input from "../components/Input/Input";
+
 import api from "../services/api";
-import Button from "../components/Button/Button";
+import Input from "../components/Input/Input";
+import Navbar from "../components/Navbar/Navbar";
+import ProfileCard from "../components/ProfileCard/ProfileCard";
+
+import "../styles/userSearchPage.css"
+import UserIllustration from "../assets/images/userSearchPage.svg"
+
 
 export default function Call() {
   const { setUser } = useAuth();
@@ -23,9 +28,11 @@ export default function Call() {
     history.push("/")
   } 
 
+  
   useEffect(() => {
     
       if (searchUserName.trim() === "") {
+        setSearchResponse("")
         return;
       }
       
@@ -34,6 +41,7 @@ export default function Call() {
       .get(url)
       .then((response) => setSearchResponse(response.data))
       .catch((err) => {
+        //setSearchResponse("")
         console.error(err);
       });
 
@@ -41,18 +49,30 @@ export default function Call() {
 
   console.log(searchResponse)
 
+  const goToRespositories = () =>{
+    console.log("deu certo")
+  }
+
   return (
+    <>
+    <Navbar/>
     <section >
-      { gitHubResponseCode ?
+      <div className="search__container">
        <Input
+       className="search__input"
        value= {searchUserName}
-       placeholder="nome de usuário"
+       placeholder="Quem você quer encontrar por aqui?"
        onChange={setSearchUserName}
        /> 
-       : <Loading/> }
-
-       {searchResponse.login} 
-        <Button></Button>
+       { searchResponse ? 
+       <ProfileCard
+       profileInformations = {searchResponse}
+       /> :
+       <img alt="ilustração" className = "search__image" src={UserIllustration}/>
+       }
+       {searchResponse.login}
+      </div>   
     </section>
+    </>
   );
 }

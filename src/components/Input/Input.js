@@ -1,18 +1,19 @@
 import React from "react";
-//import "./Loading.scss";
-
-const Input = ({ placeholder, value, onChange}) => {
+const Input = ({ placeholder, value, onChange, className}) => {
     
 return (
-
-    <div>
-        <input 
+    
+    
+      <input 
+        type="text" 
+        className={className} 
         value={value}
         placeholder={placeholder}
-        onChange={(e) => onChange(e.target.value)}
-        ></input>
-    </div>
+        onChange={(e) => onChange(e.target.value)} />
     
+
+
+   
 );
 }
 export default Input;
