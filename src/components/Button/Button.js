@@ -2,14 +2,15 @@ import React from "react";
 import "./Button.scss";
 
 
-const Button = ({onClick, label}) => {
+
+const Button = ({onClick, label, icon}) => {
 
 return (
 
     <div>
         <button
          className="button button-border"
-         onClick = {onClick} >{label}</button>
+         onClick = {onClick} ><img src= {icon} alt="icon" /> {label}</button>
     </div>
     
 );

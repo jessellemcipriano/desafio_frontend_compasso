@@ -1,0 +1,56 @@
+body {
+    font-family: Montserrat, sans-serif;
+    height: 100vh;
+    
+   
+  }
+
+  
+
+  .login__container{
+    width:100vw;
+    height:100vh;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10vh;
+    background-color: #6d5ea626;
+}
+
+.login__image{
+    width: 600px;
+    height: auto;
+}
+
+h6{
+    font-size: 10px;
+}
+
+h6::before,
+h6::after {
+  background-color: #000;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+
+h6::before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+h6::after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
+@media(max-width:767px) {
+  .login__image{
+    width: 90vw;
+    height: auto;
+}
+}

@@ -1,14 +1,25 @@
+.btn:focus{
+box-shadow: unset;
+}
+
+label{
+  color:grey;
+  font-size: 15px;
+  margin: 0px!important;
+  padding: 0px!important;
+}
+
 .profile__card{
-  margin-top: 5vh;
-  width:60vw;
+  margin-top: 2vh;
+  padding: 16px;
+  width:50vw;
   height:100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  box-shadow:  -12px -12px 24px #fcfcfc,
-  12px 12px 24px #ffffff;
-  border: 1px solid #eed7f8;
+  box-shadow:  0px 0px 24px #f2f2f2,
+             12px 12px 24px #ffffff;
   color:#2e2c2c;
   border-radius: 5px;
 }
@@ -18,4 +29,80 @@
     height: auto;
     border-radius: 50%;
     border: 3px solid #9062b1;
+    margin: 8px;
 }
+
+.profile__informations{
+    width: 20%;
+    height: 10%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile__row{
+    margin-top: 16px;
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+}
+
+.profile__actions{
+    margin: 32px 0;
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+}
+
+@media(max-width:767px) {
+
+    
+
+    h3{
+        font-size: 16px;
+    }
+
+    label{
+        color:grey;
+        font-size: 10px;
+        margin: 0px!important;
+        padding: 0px!important;
+    }
+
+    h4 {
+        font-size: 14px;
+    }
+
+    .profile__card{
+        margin-top: 2vh;
+        width:80vw;
+        height:auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-shadow:  0px 0px 24px #f2f2f2,
+                   12px 12px 24px #ffffff;
+        color:#2e2c2c;
+        border-radius: 5px;
+      }
+
+    .profile__row{
+        margin-top: 16px;
+        display: flex;
+        width: 70%;
+        justify-content: space-between;
+    }
+
+    .profile__actions{
+        margin: 32px 0;
+        display: flex;
+        width: 80%;
+        justify-content: space-evenly;
+    }
+
+    
+
+}
+

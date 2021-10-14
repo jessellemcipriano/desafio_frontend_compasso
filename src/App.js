@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from "../src/context/authContext";
-import Login from './pages/index';
-import Search from './pages/userSearch';
+import Login from './pages/Login/Login';
+import Search from './pages/userSearch/userSearch';
 
 export default function App() {
   
