@@ -28,8 +28,9 @@ const goToStarred = () =>{
 return (
 <section className="profile">
     <div className="profile__card">
+        <div className="teste">
         <img className="profile__image" alt= "user" src={profileInformations.avatar_url}></img>
-
+        </div>
         <h3>{profileInformations.name}</h3>
         <label>@{profileInformations.login}</label>
         <button className="btn btn-link" onClick={goToProfile} >Ver perfil</button>

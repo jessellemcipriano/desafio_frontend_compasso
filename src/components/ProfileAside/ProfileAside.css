@@ -1,0 +1,21 @@
+.profile__aside{
+height: auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+padding: 64px 32px;
+}
+
+
+.Profile__image.border{
+    width: 120px;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid #9062b1;
+    margin: 8px;
+    justify-content: center;
+    align-items: center;
+    background-color: #9062b134;
+
+}

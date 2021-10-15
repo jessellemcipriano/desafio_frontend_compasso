@@ -18,18 +18,18 @@ label{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  box-shadow:  0px 0px 24px #f2f2f2,
-             12px 12px 24px #ffffff;
+  box-shadow:  0px 0px 24px #f2f2f2;
   color:#2e2c2c;
-  border-radius: 5px;
+  border-radius: 12px;
+  
 }
 
 .profile__image{
     width: 100px;
     height: auto;
     border-radius: 50%;
-    border: 3px solid #9062b1;
     margin: 8px;
+    box-shadow:  0px 0px 24px #f2f2f2;
 }
 
 .profile__informations{
@@ -101,8 +101,8 @@ label{
         width: 80%;
         justify-content: space-evenly;
     }
-
-    
+   
 
 }
+
 

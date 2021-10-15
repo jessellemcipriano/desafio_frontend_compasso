@@ -22,6 +22,7 @@ return (
       <div className="navbar-brand">
         <img src={Logo} width="90" height="auto" className="align-top" alt="logo"/>
       </div>
+      
       <button 
        className = "btn mr-32 navbar__button"
        onClick={logOut}

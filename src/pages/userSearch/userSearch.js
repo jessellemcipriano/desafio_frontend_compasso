@@ -15,7 +15,7 @@ import UserIllustration from "../../assets/images/userSearchPage.svg"
 
 
 
-export default function Call() {
+export default function Search() {
   
   const { user, setUser } = useAuth();
   const {searchResponse, setSearchResponse} = useAuth();
@@ -32,18 +32,14 @@ export default function Call() {
       if(!gitHubResponseCode || gitHubResponseError ){
         history.push("/")
       } 
-
+      let error = false
       const serverurl = "/github/auth/" + gitHubResponseCode
           serverApi
           .get(serverurl)
           .then((response) => setUser(response.data.access_token) )
           .catch((err) => { 
-            console.log(err)
-          });
-    }
-
-    if(user === ""){
-      history.push('/')
+            history.push('/')
+          });      
     }
   }, [])
 
@@ -82,18 +78,18 @@ export default function Call() {
       <Navbar/>
       <section >
         <div className="search__container">
-          <Input
-          className="search__input"
-          value= {searchUserName}
-          placeholder="Quem você quer encontrar por aqui?"
-          onChange={setSearchUserName}
-          /> 
-          { searchResponse ? 
-          <ProfileCard
-          profileInformations = {searchResponse}
-          /> :
-          <img alt="ilustração" className = "search__image" src={UserIllustration}/>
-          }
+            <Input
+              className="search__input"
+              value= {searchUserName}
+              placeholder="Quem você quer encontrar por aqui?"
+              onChange={setSearchUserName}
+            /> 
+            { searchResponse ? 
+            <ProfileCard
+              profileInformations = {searchResponse}
+            /> :
+            <img alt="ilustração" className = "search__image" src={UserIllustration}/>
+            }
         </div>   
       </section> 
       </> 
