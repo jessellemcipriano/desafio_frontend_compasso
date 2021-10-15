@@ -2,16 +2,17 @@ import React, { useEffect, useState, } from "react";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../../context/authContext";
 import RepositoryCard from "../../components/RepositoryCard/RepositoryCard";
-import ProfileAside from "../../components/ProfileAside/ProfileAside"
+
 import githubApi from "../../services/githubApi";
-import BackIcon from "../../assets/images/backIcon.svg"
+
 import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
-import "./Profile.css"
+import BackIcon from "../../assets/images/backIcon.svg"
+import "./RepositoryPage.css"
 
 
 
-export default function Profile() {
+export default function Repository() {
   
   const { user } = useAuth();
   const {searchResponse} = useAuth();
@@ -29,7 +30,7 @@ export default function Profile() {
       history.push('/')
     }
 
-    const url = "/users/" + searchResponse.login + "/repos?per_page=6"
+    const url = "/users/" + searchResponse.login + "/repos?per_page=20"
       githubApi
       .get(url, {
         headers: {
@@ -54,21 +55,17 @@ export default function Profile() {
     return (
       <>
       <Navbar/>
-      <section className="profile__container">
-        <div className="row">
-          <ProfileAside
-          profileInformations = {searchResponse}
-          />  
-          <div className="col-lg-8 col-12 repository__cards">
+      <section className="repository__container">
+         
+          <div className="col-lg-12 col-12 repository__cards">
             <div className="label__row">
-              <h3>Repositórios Recentes</h3>
+              <h3>Repositórios</h3>
               <Button 
               label="Voltar"
               icon={BackIcon}
               onClick = {goToSearchPage}
               />
             </div>
-            
             { repositoryList ? 
               <div className="repository__list">
               {repositoryList.data.map((repositoryInformations) => (
@@ -77,10 +74,10 @@ export default function Profile() {
              </div> 
              :
              <p>Ops, parece que esse usuário ainda não tem repositórios publicos!</p>
-            }
+             }
 
           </div>
-        </div>
+        
       </section> 
       </> 
     );

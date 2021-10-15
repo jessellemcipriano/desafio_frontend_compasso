@@ -14,7 +14,7 @@ return (
 <section className="repository">
     <div className="repository__card">
         <div className="repository__label">       
-            <h4>{repositoryInformations.name}</h4>
+            <h4><a href={repositoryInformations.html_url}>{repositoryInformations.name}</a></h4>
         </div>
         
         <div className="repository__description">
@@ -28,11 +28,8 @@ return (
             <div className="repository__data">
                 <img src={StarredIcon} />
                 <label>{repositoryInformations.stargazers_count}</label>
-
                 <img src={WatcherIcon} />
-                <label>{repositoryInformations.watchers_count}</label>
-
-                
+                <label>{repositoryInformations.watchers_count}</label>  
             </div>
         </div> 
     </div>

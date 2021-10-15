@@ -29,9 +29,10 @@ export default function Search() {
       let gitHubResponseCode =  params.get('code');
       let gitHubResponseError =  params.get('error');
       
-      if(!gitHubResponseCode || gitHubResponseError ){
+      if(gitHubResponseError){
         history.push("/")
       } 
+      
       let error = false
       const serverurl = "/github/auth/" + gitHubResponseCode
           serverApi
@@ -41,6 +42,8 @@ export default function Search() {
             history.push('/')
           });      
     }
+
+
   }, [])
 
 
