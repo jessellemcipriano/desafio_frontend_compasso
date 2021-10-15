@@ -1,0 +1,13 @@
+.navbar__bg{
+    background-color: #2e2c2c;
+}
+
+.navbar__button{
+    background: rgb(178,101,187);
+    background: linear-gradient(188deg, rgba(178,101,187,1) 0%, rgba(124,95,170,1) 40%, rgba(54,81,124,1) 100%);
+    color:#FFF;
+    cursor: pointer;
+    border:unset;
+    
+}
+

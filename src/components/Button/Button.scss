@@ -1,0 +1,45 @@
+.button{
+    height: 45px!important;
+    width: 130px!important;
+    border-radius: 4px;
+    font-weight: 500;
+    background: rgb(178,101,187);
+    background: linear-gradient(188deg, rgba(178,101,187,1) 0%, rgba(124,95,170,1) 40%, rgba(54,81,124,1) 100%);
+    color:#FFF;
+    padding: 0 32px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border:0;
+    margin-bottom: 16px;
+    transition: background 0.6s;
+    font-size: 15px;
+    color:#FFF;
+    
+    img{
+        margin-right: 2px;
+    }
+
+    &:not(:disabled):hover{
+        background: #2e2c2c;
+        
+    }
+
+    &:disabled{
+        opacity:1;
+        cursor:not-allowed;
+        height: 100%!important;
+        width: 100%!important;
+        background-color: rgba(222, 194, 224, 0.9) ;
+        
+    }
+
+    
+
+}
+
+
+
+
+

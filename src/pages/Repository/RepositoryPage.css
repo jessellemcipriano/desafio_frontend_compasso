@@ -1,0 +1,54 @@
+.repository__container{
+    width: 97%;
+    margin: 6px!important;
+}
+
+
+.repository__cards{
+    height: 85vh;
+    padding: 16px;
+    border-left: 0.5px solid rgb(241, 241, 241) ;
+    
+}
+
+.repository__cards h3{
+    margin-bottom: 16px!important;
+    padding: 4px 4px!important;
+    border-bottom: 0.5px solid rgb(221, 221, 221) ;
+}
+
+.repository__list{
+    height: 70vh;
+    overflow-y:auto;
+    justify-content: center;
+    flex-direction: column;
+    padding: 32px;
+}
+    
+.label__row{
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    
+}
+
+.label__row h3{
+    display:inline-block;
+    margin-right: auto;
+}
+
+@media (max-width: 767px){
+.repository__cards h3 {
+    font-size: 20px;
+}
+
+.repository__list{
+    height: 70vh;
+    overflow-y:auto;
+    justify-content: center;
+    flex-direction: column;
+    padding: 8px;
+}
+
+}
