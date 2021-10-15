@@ -17,6 +17,7 @@ export default function Repository() {
   const { user } = useAuth();
   const {searchResponse} = useAuth();
   const [repositoryList, setRepositoryList] = useState();
+  const [pageIndex, setPageIndex] = useState(1);
   const history = useHistory();
   
  
@@ -30,7 +31,13 @@ export default function Repository() {
       history.push('/')
     }
 
-    const url = "/users/" + searchResponse.login + "/repos?per_page=20"
+  }, [])
+
+
+
+  useEffect(()=>{
+    
+    const url = "/users/" + searchResponse.login + "/repos?per_page=10&page=" + pageIndex
       githubApi
       .get(url, {
         headers: {
@@ -43,14 +50,36 @@ export default function Repository() {
         setRepositoryList("")
       });
 
-      console.log(repositoryList)
-  }, [])
+      const container = document.getElementById('repository__list')
+      if(container)
+        container.scrollTo(0,0)
+
+  }, [pageIndex])
+
+
 
   const goToSearchPage = () => {
     history.push('/myGitSpace')
   }
 
-  console.log(searchResponse)
+
+  const previousPageIndex = () => {
+    if( pageIndex <= 1){
+      return;
+    }
+    const index = pageIndex -1;
+    setPageIndex(index)
+  }
+
+
+  const nextPageIndex = () => {
+    if(repositoryList.data.length === 0){
+      return;
+    }
+    const index = pageIndex + 1;
+    setPageIndex(index)
+  }
+
 
     return (
       <>
@@ -67,10 +96,23 @@ export default function Repository() {
               />
             </div>
             { repositoryList ? 
-              <div className="repository__list">
-              {repositoryList.data.map((repositoryInformations) => (
+              <div id="repository__list"  className="repository__list">
+               { repositoryList.data.length >0 ? (repositoryList.data.map((repositoryInformations) => (
                   <RepositoryCard repositoryInformations={repositoryInformations}  />
-              ))} 
+              ))) : (<label>Isso é tudo, pessoal!</label>)}
+              <nav aria-label="Page navigation example">
+                  <ul className="pagination justify-content-center">
+                    
+                    <li className="page-item disabled">
+                      <button className="btn btn-link" onClick={previousPageIndex} >Previous</button>
+                    </li>
+                    
+                    <li className="page-item">
+                    <button className="btn btn-link" onClick={nextPageIndex} >Next</button>
+                    </li>
+
+                  </ul>
+                </nav>
              </div> 
              :
              <p>Ops, parece que esse usuário ainda não tem repositórios publicos!</p>

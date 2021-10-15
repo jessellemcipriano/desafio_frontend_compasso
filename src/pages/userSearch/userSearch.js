@@ -43,12 +43,12 @@ export default function Search() {
           });      
     }
 
+    if(searchResponse){
+      setSearchUserName(searchResponse.login)
+    }
 
   }, [])
 
-
-  
-  
 
   useEffect(() => {
     
