@@ -1,7 +1,6 @@
 import React from "react";
 import "./navbar.css"
 import Logo from "../../assets/images/navbar__logo.svg"
-import Logout from "../../assets/images/LogoutIcon.svg"
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../../context/authContext";
 

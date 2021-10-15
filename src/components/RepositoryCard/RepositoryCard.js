@@ -1,9 +1,6 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
-import './RepositoryCard.css'
 
-import Button from "../Button/Button"
-import RepoIcon from "../../assets/images/repositoryIcon.svg"
+import './RepositoryCard.css'
 import StarredIcon from "../../assets/images/StarIcon.svg"
 import WatcherIcon from "../../assets/images/WatcherIcon.svg"
 

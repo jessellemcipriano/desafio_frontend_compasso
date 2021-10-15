@@ -58,7 +58,7 @@ export default function Search() {
       }
 
       
-      console.log(user)
+      
       const url = "/users/" + searchUserName
       githubApi
       .get(url, {

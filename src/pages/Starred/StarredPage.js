@@ -51,7 +51,7 @@ export default function Repository() {
       });
 
       const container = document.getElementById('starred-repository__list')
-      console.log(container)
+      
       if(container)
         container.scrollTo(0,0)
   }, [pageIndex])

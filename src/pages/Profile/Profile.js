@@ -42,14 +42,14 @@ export default function Profile() {
         setRepositoryList("")
       });
 
-      console.log(repositoryList)
+      
   }, [])
 
   const goToSearchPage = () => {
     history.push('/myGitSpace')
   }
 
-  console.log(searchResponse)
+  
 
     return (
       <>
